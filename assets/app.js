@@ -1,9 +1,9 @@
 (function () {
   "use strict";
 
-  /* ---------- Build path (publicado pelo CI em src/build/WebGL) ---------- */
-  const BUILD_DIR = "src/build/WebGL";
-  const BUILD_URL = BUILD_DIR + "/Build";
+  /* ---------- Build path (publicado em ./build) ---------- */
+  const BUILD_DIR = "build";
+  const BUILD_URL = BUILD_DIR;
 
   const canvas = document.getElementById("unity-canvas");
   const gameHost = document.getElementById("gameHost");
@@ -191,8 +191,7 @@
       dataUrl: dataUrl,
       frameworkUrl: frameworkUrl,
       codeUrl: codeUrl,
-      streamingAssetsUrl: BUILD_DIR + "/StreamingAssets",
-      companyName: "Megaman Arena Tribute",
+      streamingAssetsUrl: BUILD_DIR + "/StreamingAssets",      companyName: "Megaman Arena Tribute",
       productName: "Megaman Arena Tribute",
       productVersion: "1.0",
       matchWebGLToCanvasSize: true,
