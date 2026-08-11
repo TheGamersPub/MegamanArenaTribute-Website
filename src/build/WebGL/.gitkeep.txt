@@ -1,0 +1,1 @@
+# pasta vazia; build WebGL publicado pelo CI (repositório MegamanArena-Tribute)

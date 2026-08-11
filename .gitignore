@@ -1,0 +1,7 @@
+# Builds publicados pelo CI (nunca commitar localmente)
+src/build/WebGL/*.unityweb
+src/build/WebGL/Build/
+src/build/WebGL/TemplateData/
+src/build/WebGL/StreamingAssets/
+src/build/WebGL/index.html
+src/build/WebGL/*.html

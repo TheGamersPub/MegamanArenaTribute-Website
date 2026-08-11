@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Megaman Arena Tribute</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <div id="left">
+      <div class="row">
+        <h1>Megaman Arena Tribute</h1>
+        <span id="unityState">carregando...</span>
+        <button id="fullscreenBtn" title="Tela cheia (Esc para sair)">
+          <img src="./assets/fullscreen.png" alt="Tela cheia" />
+        </button>
+        <button id="reloadBtn">Recarregar</button>
+      </div>
+      <div id="gameHost">
+        <canvas id="unity-canvas" tabindex="-1"></canvas>
+        <div id="loading">
+          <div id="loadingTitle">MEGAMAN ARENA</div>
+          <div class="progressbar">
+            <div id="progress"></div>
+          </div>
+          <div id="loadingText">CARREGANDO...</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="right">
+      <section>
+        <h2>Debug — Console da Unity</h2>
+        <div class="row" style="justify-content: space-between; margin-bottom: 6px">
+          <label class="switch" title="Exibe logs no painel (pode custar FPS)">
+            <input type="checkbox" id="consoleCapture" checked />
+            Capturar console
+          </label>
+          <button id="copyConsoleBtn">Copiar console</button>
+        </div>
+        <div id="console"></div>
+      </section>
+
+      <section>
+        <h2>Dados do Jogo</h2>
+        <div class="row">
+          <div id="stats"></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Tráfego</h2>
+        <div id="log"></div>
+      </section>
+    </div>
+
+    <script src="./assets/app.js"></script>
+  </body>
+</html>
