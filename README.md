@@ -1,23 +1,35 @@
 # Megaman Arena Tribute — Website
 
-Site paralelo que hospeda o build WebGL do jogo **Megaman Arena Tribute**.
+Site paralelo que hospeda o build Web (Godot 4.7) do jogo **Megaman Arena Tribute**
+(Project UNIT-X). Publicado via GitHub Pages:
+<https://thegamerspub.github.io/MegamanArenaTribute-Website/>
+
+Código-fonte do jogo: [TheGamersPub/MegamanArena-Tribute](https://github.com/TheGamersPub/MegamanArena-Tribute)
 
 ## Estrutura
 
 ```
-build/             Build WebGL do jogo (WebGL.data/framework.js/loader.js/wasm)
-assets/            Estilos, scripts e ícones do site (loader + painel de debug)
-index.html         Página principal (carrega o build e expõe ferramentas de debug)
+build/             Export Web do Godot (index.html/js/wasm/pck + audio worklets)
+assets/            Estilos, scripts e ícones do site (painel de debug)
+index.html         Página principal (embute build/index.html num iframe + ferramentas de debug)
 ```
 
-## Deploy
+## Atualizar o build
 
-O repositório `MegamanArena-Tribute` publica o build WebGL em `build/` via GitHub
-Actions (workflow `build-webgl-deploy-pages.yml`) usando Pages da branch `main`.
+No repositório do jogo:
+
+```bash
+godot --headless --export-release "Web" build/web/index.html
+```
+
+Copie o conteúdo de `build/web/` (sem os arquivos `*.import`) para `build/` aqui e faça o commit.
+O build é single-threaded, então não precisa de headers COOP/COEP (funciona no GitHub Pages).
 
 ## Uso
 
-Abrir `index.html` carrega o build de `build/` com:
+Abrir `index.html` carrega o jogo de `build/` com:
 - Botão de **tela cheia** (fullscreen)
-- **Recarregar** o build
-- Painel de **debug** com captura do console da Unity, tráfego e dados do jogo
+- **Recarregar** o jogo
+- Painel de **debug** com captura do console do Godot, tráfego e dados do jogo
+
+Para testar localmente: `serve.bat` (ou `node serve.js . 8000`) e abra <http://localhost:8000>.
